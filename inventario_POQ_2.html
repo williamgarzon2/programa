@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"> -->
+
+<!-- <script type="text/javascript" src="chart_js/Chart.bundle.js"></script> -->
+<!-- <script type="text/javascript" src="chart_js/jquery-3.4.1.js"></script> -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	
+	<link type="text/javascript" src="chart_js/Chart.bundle.js"></script>
+
+<!-- INICIO chart -->
+
+	<script>
+
+    	$(document).ready(function(){
+    		var datos = {
+    			type: "pie",
+    			data: {
+    				datasets:[{
+    					data:[
+    						5,
+    						10,
+    						40,
+    						12,
+    						23,
+    					],
+    					backgroundColor: [
+    						"#F7464A",
+    						"#46BFBD",
+    						"#FDB45C",
+    						"#949FB1",
+    						"#4D5360",
+
+    					],
+    				}],
+    				labels:[
+    					"Datos 1",
+    					"Datos 2",
+    					"Datos 3",
+    					"Datos 4",
+    					"Datos 5",
+    				]
+    			},
+    			options:{
+    				responsive:true,
+    			}
+    		};
+
+    		var canvas = document.getElementById('chart').getContext('2d');
+    		window.pie = new chart(canvas, datos);
+    	});
+
+
+	</script>
+
+<!-- FIN chart -->
+
+
+</head>
+<body>
+	<h1 class="text-center"><strong>INVENTARIO POQ</strong></h1>
+<br>
+
+
+<table class="egt">
+
+  <tr>
+    <td>
+   		<h2>&nbsp Tasa de producción</h2>
+		<h2> 
+			&nbsp P = <input type="number" step="any" name=""><br>
+		</h2>
+		<br>
+    </td>
+    <td>
+		<h2>&nbsp Demanda</h2>
+		<h2> 
+			&nbsp D = <input type="number" step="any" name=""><br>
+		</h2>
+		<br>
+    </td>
+    <td>
+		<h2>&nbsp Tiempo guia</h2>
+		<h2> 
+			&nbsp L = <input type="number" step="any" name=""><br>
+		</h2>
+	<br>
+    	
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+		<h2>&nbsp Costo de organización</h2>
+		<h2> 
+			&nbsp K = <input type="number" step="any" name=""><br>
+		</h2>
+		<br>
+    </td>
+    <td>
+		<h2>&nbsp Valor de cada unidad del producto</h2>
+		<h2> 
+			&nbsp C = <input type="number" step="any" name=""><br>
+		</h2>
+		<br>
+    </td>
+    <td>
+		<h2>&nbsp Tasa de transferencia</h2>
+		<h2> 
+			&nbsp i = <input type="number" step="any" name=""><br>
+		</h2>
+		<br>
+    	
+    </td>
+  </tr>
+  <tr>
+    <td>
+		<h2>&nbsp Costo de conservación </h2>
+		<h2> 
+			&nbsp H = <input type="number" step="any" name=""><br>
+		</h2>
+		<br>
+    </td>
+  </tr>
+
+</table>
+
+<!-- INICIO GRAFICA -->
+<div id="canvas-container" style="width: 50%;">
+	<canvas id="chart" width="600" height="400"></canvas>
+</div>
+<!-- FIN GRAFICA -->
+
+
+</body>
+
+</html> 
